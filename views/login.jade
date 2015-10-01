@@ -1,0 +1,19 @@
+extends layout
+block content
+
+	.panel300
+		h2.centered Login
+		h4.centered if you can remember your password
+				
+		form(action="/login" method="POST").mt30
+			.flexbox-col
+				.fg1
+					label(for="username") Username #[span.e1.fs10.pullright.fg-err #{error}]
+				.fg1
+					input(type="text" name="username" value="xmetrix")
+				.fg1
+					label(for="password") Password 
+				.fg1
+					input(type="password" name="password" value="x")
+				.fg1.centered.mt10
+					input(type="submit"  name="submit" value="Login")

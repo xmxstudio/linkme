@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	.flexbox-row.wrap.sb
+		each entry in entries
+			+renderentry(entry)
+			//-+renderentry(!{entry.icon},!{entry.link},!{entry.title},!{entry.tags})		

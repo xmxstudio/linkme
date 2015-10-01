@@ -1,0 +1,15 @@
+nav(role="navigation").flexbox
+	
+	-if(user == undefined){
+		.fg1.mr10
+			a(href="/join") join
+		.fs1
+			a(href="/login") login
+	-}else{
+		.fg1.mr20.ar
+			a(href="/new") new link
+		.fs1.mr10
+			a(href="/account").strong #{user.user}
+		.fs1
+			a(href="/logout") logout
+	-}

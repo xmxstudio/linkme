@@ -1,0 +1,22 @@
+mixin test(what)
+	p !{what}
+
+mixin renderentry(entry)
+	.card.flexbox-col.fs10.centered
+		.top.h100(style="background-image: url(#{entry.image})")
+		.title.ac.fs12
+			a(target="_blank" href='#{entry.url}') #{entry.title}
+		.meta.flexbox-row.sb.m0.p0.flexend
+			.fg1.m0.p0.ghost.likes +#{entry.likes}
+			.fg1.m0.p0.ghost.dislikes -#{entry.dislikes}
+			.fg1.m0.p0.ghost.clicks #{entry.clicks}
+			.fg1.m0.p0.ghost #{entry.postdate}
+			.fg1.m0.p0.ghost #{entry.author.substr(0,7)}
+
+
+mixin chatline(username, message)
+	.chatline.flexbox-row.fs10.jcfs
+		fs1.mw150
+			p #{username}:
+		fg1.ml5
+			p !{message}

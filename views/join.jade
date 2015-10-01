@@ -1,0 +1,27 @@
+extends layout
+block content
+
+	.panel300
+		h2.centered Join
+		h4.centered simple, quick, free.
+				
+		form(action="/join" method="POST").mt30
+			.flexbox-col
+				.fg1
+					label(for="username") Username #[span.e1.fs10.pullright.fg-err #{errors.e1}]
+				.fg1
+					input(type="text" name="username" value="#{formdata.username}")
+				.fg1
+					label(for="email") Email #[span.e2.fs10.pullright.fg-err #{errors.e2}]
+				.fg1
+					input(type="text" name="email" value="#{formdata.email}")
+				.fg1
+					label(for="password") Password #[span.e3.fs10.pullright.fg-err #{errors.e3}]
+				.fg1
+					input(type="password" name="password")
+				.fg1
+					label(for="cpassword") Confirm Password #[span.e4.fs10.pullright.fg-err #{errors.e4}]
+				.fg1
+					input(type="password" name="cpassword")
+				.fg1.centered.mt10
+					input(type="submit"  name="submit" value="Sign Up")

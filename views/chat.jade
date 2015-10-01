@@ -1,0 +1,18 @@
+.chatpanel.darkghost.flexbox-col 
+	.chattitle.flexbox-row
+		.fg1 Chat
+		.fs1
+			a(id="togglechat" href="#").fa.fa-toggle-on
+
+	.chatlog.flexbox-col.scrolly.fg1
+		.chatline.flexbox-row.fs10.jcfs
+		+chatline('username','whats going on suckers')
+		+chatline('xmetrix','nothing. shut up noob.')
+		+chatline('username','shut up noob')
+		+chatline('xmetrix','you first you fat shit.')
+		+chatline('username','eat me!')
+		+chatline('xmetrix','wtf? eat you?<br/>are you a taco?')
+		+chatline('username','no! wtf?')
+		+chatline('xmetrix','then fuck off!')
+	.chatinput
+		input(type="text" id="chatmsg" name="chatmsg" value="" placeholder="type /? for help, press [enter] to send").darkghost.ali.fs10

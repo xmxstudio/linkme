@@ -1,0 +1,56 @@
+extends layout
+block content
+
+	#modal
+		.croppanel
+			p.centered Crop Your Image
+			#cropper
+				img(src="#" id="cropimage")
+			#croptools
+				.flexbox-row.sa.mt10
+					.fg1.ac 
+						input(type="submit" name="crop" id="cropCancel" value="Cancel") 
+					.fg1.ac
+						input(type="submit" name="crop" id="cropOK" value="OK") 
+	.panel300
+		h2.centered Add New Link
+		h5.centered.mt20 add your link and any details you'd like to share
+				
+		form(id="newlinkform" action="/new" method="POST").mt30
+			.flexbox-col
+				.fg1
+					label(for="image") Image
+				.fg1
+					input(type="file" id="filebrowser"  onchange="showpic(this)" name="image").hidden
+					label(for="imageurl") #[input(type="text"  id="imageurl" name="imageurl")]
+					p.centered or
+
+					.previewbox.flexbox
+						img(src="#" id="previewimage").hidden
+						input(type="hidden" id="datablob" name="datablob")
+					#showFileChooser
+						p.fs12.centered.ghost Upload image
+						
+				.fg1
+					label(for="title") Link Title #[span.e1.fs10.pullright.fg-err #{error.e1}]
+				.fg1
+					input(type="text" id="title" name="title").ali
+				.fg1
+					label(for="url") Url  #[span.e1.fs10.pullright.fg-err #{error.e2}]
+				.fg1
+					input(type="text" id="newUrl" name="url").ali 
+				.fg1
+					label(for="description") Description  #[span.e1.fs10.pullright.fg-err #{error.e3}]
+				.fg1
+					textarea(rows="3" name="description").ali
+				.fg1
+					label(id="optionaltags" for="tags") Optional Tags #[span.fs10 press enter to add tag]
+				.fg1
+					.hashtags
+					input(id="tags" type="text").ali
+					input(name="hashtags" id="hashtags" type="hidden")
+
+
+
+				.fg1.centered.mt10
+					input(type="submit"  name="submit" value="Add link")

@@ -1,0 +1,19 @@
+extends layout
+block content
+
+	.panel300
+		h2.centered Congrats
+		h4.centered one more step required.
+
+		p.mt30 Check your email for a code and enter it below
+
+		form(action="/verify" method="POST").mt5
+			.flexbox-col
+				.fg1
+					label(for="vcode") Verification Code #[span.e1.fs10.pullright.fg-err #{error}]
+				.fg1
+					input(type="text" name="vcode")
+				
+				.fg1.centered.mt10
+					input(type="submit"  name="submit" value="Verify")
+		
